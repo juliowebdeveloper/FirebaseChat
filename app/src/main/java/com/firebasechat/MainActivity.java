@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkFirebaseUser();
+        sendAnalytic();
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,10 +69,10 @@ private void sendAnalytic(){
     // Create a Bundle containing information about
     // the analytics event
     Bundle eventDetails = new Bundle();
-    eventDetails.putString("ClickedButton  ", "Clicked that special button");
+    eventDetails.putString("MainActivity", "Started Main Activity");
 
     // Log the event
-    fa.logEvent("clickedButton", eventDetails);
+    fa.logEvent("MainActivity", eventDetails);
 
 }
 
